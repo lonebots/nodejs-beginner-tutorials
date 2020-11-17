@@ -6,4 +6,4 @@ var counter = (arr) => {
     return ('there are ' + arr.length + ' elements in this array')
 };
 
-module.exports = counter;
+module.exports = counter;  ///remember to write this as exports this caused an error for me in the begining
