@@ -42,8 +42,8 @@ app.get('/index', (req, res) => {
 
 //insering dummy data to the object with more property
 var data = {
-    age: 22, job: 'student'
-}
+    age: 22, job: 'student', hobbies: ['reading', 'eating', 'bathing', 'cooking']
+};
 
 //rendering the profile page with ejs
 app.get('/profile/:name', (req, res) => {

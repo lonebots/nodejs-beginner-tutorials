@@ -16,6 +16,16 @@
     <h1>welcom <%= person%></h1>
     <strong>Age<%=data.age%><br />
         Job:<%=data.job%></strong>
+    <p>
+    <h1>My hobbies</h1>
+    <ul>
+        <% data.hobbies.forEach((item)=>{%>
+        <li>
+            <%=  item%>
+        </li>
+        <%})%>
+    </ul>
+    </p>
 </body>
 
 </html>
