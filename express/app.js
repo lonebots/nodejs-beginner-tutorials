@@ -55,3 +55,4 @@ app.get('/profile/:name', (req, res) => {
 
 //make app to listen to a port
 app.listen(3000);
+console.log('listening to port : 3000')
