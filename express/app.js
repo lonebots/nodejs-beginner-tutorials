@@ -23,7 +23,12 @@ app.set('view engine', 'ejs');
 //using the inbuilt middileware 
 //it can take req, res, next 
 //next specifies the next middile ware to run if there are multiple middileware
-app.use('/assets',express.static('assets'));
+app.use('/assets',express.static('assets'));//you can add a function in here and the function can have 3 parameters mentioned above 
+//next methond 
+//express.static() - inbuild express middleware for rendering static page to the web
+
+//including middleware for the home static - nothing to do at all the above code should work fine for both of the situations.
+
 
 
 //responding to get method (static request)
