@@ -4,3 +4,7 @@ body{
     text-align: center;
     vertical-align: auto;
 }
+form{
+    display: flex;
+    flex-direction: column;
+}
