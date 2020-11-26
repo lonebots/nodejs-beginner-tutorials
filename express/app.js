@@ -50,6 +50,11 @@ app.get('/profile/:name', (req, res) => {
     res.render('profile', { person: req.params.name, data: data });//passing an object as second parameter and then we can pass its properties 
 })
 
+//some more home page 
+app.get('/home',(req,res)=>{
+    res.render('home');
+})
+
 
 
 
