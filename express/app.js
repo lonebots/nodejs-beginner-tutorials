@@ -13,7 +13,7 @@
 var express = require('express');
 
 //body parser 
-var bodyParser=require('body-parser');
+var bodyParser=require('body-parser')
 
 
 //app to access the methods in express
@@ -25,7 +25,7 @@ app.set('view engine', 'ejs');
 
 
 //url encoding parser //middleware which parse the post data in the post handler in the contact section
-var urlencodedParser = bodyParser.urlencoded({extended:false})
+var urlencodedParser =bodyParser.urlencoded({extended:false})
 
 
 //using the inbuilt middileware 
@@ -87,10 +87,12 @@ app.get('/contact',(req,res)=>{
 //we want to handle the post request in the query string and use the body-parser middleware it is inbuilt middleware available in express
 //this handle the bodyparsing of the post data 
 //post handler for the contact page 
-app.post('/contact',urlencodedParser, (req, res) => {//we need to pass 3 parameters in here
-    console.log(req.body)
-   // res.render('contact', { qs: req.query });
-})//the parsed data can be retrived from the req.body property of the request object 
+//the parsed data can be retrived from the req.body property of the request object 
+app.post('/contact',urlencodedParser,(req,res)=>{
+    console.log(req.body);
+})
+
+
 
 //make app to listen to a port
 app.listen(3000);
