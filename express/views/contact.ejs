@@ -12,10 +12,12 @@
             contact page!!
         </h1>
 <!--form tab -->
-<form id="contact-form">
-    <label for="name">Name <input type="text" value=""></label>
-    <label for="dept">Department <input type="text" value=""></label>
+<form id="contact-form" method="POST" action="/contact"><!--trying to implement a post method -->
+    <label for="name">Name <input type="text" value="<%= qs.name %>""></label>
+    <label for="dept">Department <input type="text" value="<%= qs.dept %>"></label>
     <button type="submit">Submit</button>
+    <!--trying an input value for the form submit section-->
+    <input style="color: green;" type="submit" name="Submit"/>
     </form>     
     </body>
 </html>
