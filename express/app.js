@@ -71,8 +71,9 @@ app.get('/index',(req,res)=>{
     res.render('index');
 })
 
-//contact page 
+//contact page //handling query strings
 app.get('/contact',(req,res)=>{
+    console.log(req.query)
     res.render('contact');
 })
 
