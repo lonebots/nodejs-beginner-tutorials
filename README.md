@@ -4,3 +4,7 @@ Repository for node js
 **contents**
 * basics of node js
 * installed and basic server
+* express app 
+* usage of middilwares
+* usage of query strings
+
