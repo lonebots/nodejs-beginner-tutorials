@@ -20,6 +20,12 @@ var app = express();
 //seting the view engine
 app.set('view engine', 'ejs');
 
+//using the inbuilt middileware 
+//it can take req, res, next 
+//next specifies the next middile ware to run if there are multiple middileware
+app.use('/assets',express.static('assets'));
+
+
 //responding to get method (static request)
 app.get('/', (req, res) => {
     res.send('this is the home page');//not specifying the content type since express auto detect it.
@@ -32,7 +38,7 @@ app.get('/', (req, res) => {
 }) */
 
 //sending template or html pages directly to the port
-app.get('/index', (req, res) => {
+app.get('/index1', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 })
 
@@ -53,6 +59,16 @@ app.get('/profile/:name', (req, res) => {
 //some more home page 
 app.get('/home',(req,res)=>{
     res.render('home');
+})
+
+//index page in the views section
+app.get('/index',(req,res)=>{
+    res.render('index');
+})
+
+//contact page 
+app.get('/contact',(req,res)=>{
+    res.render('contact');
 })
 
 
