@@ -1,11 +1,10 @@
-var bodyParser = require('body-parser');
-
-//middleware
-var urlencodedParser = bodyParser.urlencoded({ extended: true });
+var bodyParser =require('body-parser');
+var urlencodedParser =bodyParser.urlencoded({extended : false});//middileware
 
 
-//controller 
-var data = [{ item: 'get milk' }, { item: 'walk dog' }, { item: 'attend kallyanam' }]
+
+//dummy data 
+var data = [{ item: 'get milk' }, { item: 'walk dog' }, { item: 'todo app undaknanm' }]
 
 
 //controller for handling things
@@ -18,10 +17,17 @@ module.exports = (app) => {
     });
 
     //post
-    app.post('/todo', urlencodedParser, (req, res) => {
-        data.push(req.body);
+    app.post('/todo',urlencodedParser,(req,res)=>{
+        console.log("post call-back! started");
+        
+        //push the data 
+            data.push(req.body);
+
+        //sending data back to the frontend 
         res.json(data);
-    });
+            
+        console.log("post call-back! terminated");
+    })
 
     //delete
     app.delete('/todo/:item', (req, res) => {
