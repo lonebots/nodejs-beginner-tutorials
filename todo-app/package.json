@@ -4,6 +4,7 @@
   "description": "todo app with nodejs",
   "main": "app.js",
   "dependencies": {
+    "mongoose": "^5.10.16",
     "nodemon": "^2.0.6"
   },
   "devDependencies": {
