@@ -1,20 +1,25 @@
 const express=require('express');
 const app=express();
 
-//setting the view 
+//controller
+var todoController =require('./controllers/todoController');
+
+
+
+//setting the template engine 
 app.set('view engine', 'ejs');
-
-app.get('/',(req,res)=>{
-//request send  
-    console.log('request sent from: '+ req.url);
-
-//handling he request and responding to it    
-    res.writeHead(200, { 'Content-Type': 'text' });
-    res.end("you are all set to go");
-})
+//static files - now it is route independent
+app.use(express.static('./public'));
 
 
-//set the port
+//fire controller so that app will be available in the controller
+todoController(app);
+
+
+
+
+
+//listen to the port
 app.listen(3000, (err)=>{
     if(err)console.log(err);
     else console.log('listening to port : 3000');
